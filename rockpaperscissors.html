@@ -1,11 +1,35 @@
 <head>
 	<script type="text/javascript">
-		var random = Math.random();
 
-		function computerPlay() {
-			choice = ["rock", "paper", "scissors"]
-			return random(choice);
-		}
+
+function computerPlay(){
+  var possiblePlays = [
+    "Rock",
+    "Paper",
+    "Scissors"
+  ]
+  var randomNumber = Math.floor(Math.random()*possiblePlays.length);
+  return possiblePlays[randomNumber]
+}
+
+function playerSelection(){
+	var possiblePlays = [
+		"Rock",
+		"Paper",
+		"Scissors"]
+
+var playerChoice = prompt("Rock, Paper, Scissors?: ")
+  while (possiblePlays.indexOf(playerChoice.toUpperCase()) == -1){
+    alert("That is not one of the possible moves! Check your spelling")
+    playerChoice = prompt("Rock, Paper or Scissors?: ")
+  }
+  return playerChoice;
+}
+
+
+
+
+
 	</script>
 </head>
 
